@@ -12,7 +12,7 @@
     <h1>Privacy Policy</h1>
   </header>
   <main>
-    <p class="muted">Last updated: 16 September 2026 · Operator: Schill Labs (Mike Schillereff)</p>
+    <p class="muted">Last updated: 27 November 2026 · Operator: Schill Labs (Mike Schillereff)</p>
     <p>This policy describes how BloomDoc (“the app”) handles information when you identify plants, save a collection, subscribe, view ads on the free plan, or contact us. We do not sell your personal information. We do not use BloomDoc account or plant data to track you across other companies’ apps.</p>
 
     <h2>Who we are</h2>
@@ -36,7 +36,7 @@
     </div>
 
     <h2>How we use plant photos and AI</h2>
-    <p>When you scan, the photo is uploaded to our Supabase backend. A server-side function (<code>ai-proxy</code>) sends the image and a prompt to <strong>OpenAI’s API</strong> so we can return a species guess, health notes, a care plan, or a Leafy reply. We use the photo only to provide that feature.</p>
+    <p>When you scan, the photo is uploaded to our Supabase backend. A server-side function (<code>ai-proxy</code>) may send scan photos to <strong>Pl@ntNet</strong> for plant identification and may send the image and a prompt to <strong>OpenAI’s API</strong> to return a species guess, health notes, a care plan, or a Leafy reply. We use the photo only to provide that feature.</p>
     <p>You may optionally provide symptom timing, affected growth, soil observations, and up to two extra views of the same plant. These are sent for that analysis. The app keeps your first photo when you save the plant; it does not add the extra views to your saved photo history. The observations are stored with the saved analysis. If a photo appears to contain multiple plants, BloomDoc may ask you to retake a single-plant view rather than assigning one result to every plant. Weekly garden reviews summarize recorded care and upcoming reminders without sending a new AI request.</p>
     <p>OpenAI processes the request under its API terms. We do not use your plant photos to train a public advertising profile. We do not use the consumer ChatGPT product to run BloomDoc.</p>
     <p>Each displayed AI scan result, care plan, and Leafy response includes an in-app reporting action. Sending a report is optional. Reports go to BloomDoc's private safety-review queue and are linked to the reporting account so we can prevent abuse, investigate the selected output, and remove the report when that account is deleted. Reports are not sent through email or posted publicly.</p>
@@ -58,9 +58,10 @@
 
     <h2>Processors</h2>
     <ul>
-      <li><strong>Supabase</strong> (United States) — authentication, database, file storage, and the edge function that calls the AI provider.</li>
+      <li><strong>Supabase</strong> (United States) — authentication, database, file storage, and the edge function that calls Pl@ntNet and OpenAI.</li>
       <li><strong>Cloudflare</strong> — private plant-photo storage in R2 and the backend service that stores, retrieves, and deletes those photo objects. Photos are not published in a public bucket.</li>
       <li><strong>OpenAI</strong> (United States) — vision and text analysis requested by our edge function. The API key stays on the server.</li>
+      <li><strong>Pl@ntNet</strong> — plant identification from scan photos sent by our edge function.</li>
       <li><strong>RevenueCat</strong> — subscription status and restore-purchases for App Store / Google Play products.</li>
       <li><strong>Apple</strong> — App Store billing and, if you use Sign in with Apple, identity (and optionally a private relay email).</li>
       <li><strong>Google Play</strong> — billing if you subscribe on Android.</li>
